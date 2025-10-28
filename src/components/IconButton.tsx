@@ -34,7 +34,7 @@ export default function IconButton({
         active:bg-neutral-90
         transition-all duration-150
         disabled:opacity-40 disabled:cursor-not-allowed
-        focus-ring
+        focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2
         ${className}
       `}
     >

@@ -95,11 +95,6 @@ body {
   white-space: nowrap;
 }
 
-/* Focus States */
-.focus-ring {
-  @apply focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2;
-}
-
 /* Disabled States */
 .disabled {
   opacity: 0.4;
@@ -133,7 +128,7 @@ body {
 .btn {
   @apply inline-flex items-center justify-center gap-2;
   @apply px-6 py-2 rounded-full font-medium text-base transition-all duration-[250ms];
-  @apply focus-ring disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer;
+  @apply focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer;
 }
 
 .btn-primary {

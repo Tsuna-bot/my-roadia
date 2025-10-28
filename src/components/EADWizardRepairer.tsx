@@ -602,7 +602,7 @@ export default function EADWizardRepairer({
       <div className="px-4 pt-4 pb-4 flex items-center justify-between flex-shrink-0">
         <button
           onClick={currentStep === 0 ? onClose : handlePrevious}
-          className="p-2 -ml-2 rounded-full hover:bg-neutral-95 transition-colors focus-ring"
+          className="p-2 -ml-2 rounded-full hover:bg-neutral-95 transition-colors focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
           aria-label={currentStep === 0 ? 'Fermer' : 'Précédent'}
         >
           <ArrowLeft size={24} className="text-neutral-10" />
@@ -612,7 +612,7 @@ export default function EADWizardRepairer({
         </span>
         <button
           onClick={handleSaveDraft}
-          className="p-2 -mr-2 rounded-full hover:bg-neutral-95 transition-colors focus-ring"
+          className="p-2 -mr-2 rounded-full hover:bg-neutral-95 transition-colors focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
           aria-label="Sauvegarder"
         >
           <Save size={20} className="text-neutral-60" />
@@ -708,7 +708,7 @@ export default function EADWizardRepairer({
                     <img src={file.url} alt={file.name} className="w-full h-full object-cover" />
                     <button
                       onClick={() => handleRemoveFile(currentStepData.field as keyof typeof formData, file.id)}
-                      className="absolute top-1 right-1 p-1 bg-error/90 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity focus-ring"
+                      className="absolute top-1 right-1 p-1 bg-error/90 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
                       aria-label="Supprimer"
                     >
                       <X size={14} />
@@ -841,7 +841,7 @@ export default function EADWizardRepairer({
                     <img src={file.url} alt={file.name} className="w-full h-full object-cover" />
                     <button
                       onClick={() => handleRemoveFile(currentStepData.field as keyof typeof formData, file.id)}
-                      className="absolute top-1 right-1 p-1 bg-error/90 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity focus-ring"
+                      className="absolute top-1 right-1 p-1 bg-error/90 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
                       aria-label="Supprimer"
                     >
                       <X size={14} />
@@ -992,7 +992,7 @@ export default function EADWizardRepairer({
               {currentStepData.optional && (
                 <button
                   onClick={handleNext}
-                  className="w-full py-4 text-sm text-neutral-60 font-medium hover:text-neutral-10 transition-colors focus-ring rounded-lg"
+                  className="w-full py-4 text-sm text-neutral-60 font-medium hover:text-neutral-10 transition-colors focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2 rounded-lg"
                 >
                   Passer cette étape
                 </button>

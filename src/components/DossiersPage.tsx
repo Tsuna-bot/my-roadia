@@ -129,7 +129,7 @@ export default function DossiersPage({ clientName }: DossiersPageProps = {}) {
               onClick={() => openFolder(folder.id, folder.ref)}
               className="
                 w-full text-left rounded-lg transition-all duration-[250ms]
-                group focus-ring active:scale-[0.98] md:active:scale-100
+                group focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2 active:scale-[0.98] md:active:scale-100
               "
             >
               <Card className="
@@ -223,7 +223,7 @@ export default function DossiersPage({ clientName }: DossiersPageProps = {}) {
               onClick={() => openFolder(folder.id, folder.ref)}
               className="
                 w-full text-left rounded-lg transition-all duration-[250ms]
-                group focus-ring active:scale-[0.98] md:active:scale-100
+                group focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2 active:scale-[0.98] md:active:scale-100
               "
             >
               <Card className="

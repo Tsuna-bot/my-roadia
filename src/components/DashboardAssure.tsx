@@ -72,7 +72,7 @@ export default function DashboardAssure() {
         {myClaims.map((claim) => (
           <button
             key={claim.id}
-            className="w-full rounded-lg transition-all duration-[250ms] hover:-translate-y-0.5 focus-ring"
+            className="w-full rounded-lg transition-all duration-[250ms] hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
           >
             <Card className="w-full hover:bg-neutral-98">
               <div className="p-4 md:p-6">

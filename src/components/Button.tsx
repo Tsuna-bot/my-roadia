@@ -21,7 +21,7 @@ export default function Button({
   className = '',
   as,
 }: ButtonProps) {
-  const baseClasses = 'btn focus-ring';
+  const baseClasses = 'btn focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2';
 
   const variantClasses = {
     primary: 'btn-primary',

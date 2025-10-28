@@ -69,7 +69,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 transition-all duration-[250ms]
                 md:hover:-translate-y-1
                 active:scale-[0.98] md:active:scale-100
-                focus-ring
+                focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2
               "
             >
               <Card

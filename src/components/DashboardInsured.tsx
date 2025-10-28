@@ -147,7 +147,7 @@ export default function DashboardInsured() {
                   <button
                     key={action.id}
                     onClick={() => handleQuickAction(action.id)}
-                    className="w-full h-full rounded-lg transition-all duration-[250ms] group focus-ring"
+                    className="w-full h-full rounded-lg transition-all duration-[250ms] group focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2"
                   >
                     <Card className="w-full h-full !border-0 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-[250ms] rounded-xl">
                       <div className="p-1 md:p-6 text-center flex flex-col items-center justify-center h-full gap-1 md:gap-0">

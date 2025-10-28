@@ -60,7 +60,7 @@ export default function FilterButton({ selected, onChange, filters = defaultFilt
           shadow-[0_1px_3px_rgba(0,0,0,0.08)]
           md:hover:shadow-md
           transition-all duration-150
-          focus-ring
+          focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2
           ${className}
         `}
       >
