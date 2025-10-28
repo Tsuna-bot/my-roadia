@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   DESIGN SYSTEM - Revolut Inspired
+   ======================================== */
+
+/* Base Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default input borders and outlines */
+input,
+textarea,
+select {
+  border: 0;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 0 !important;
+  outline: none !important;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  background-color: #FAFAFA;
+  color: #1A1A1A;
+  line-height: 1.5;
+}
+
+/* ========================================
+   60-30-10 COLOR RULE
+   60% Neutral backgrounds
+   30% Secondary surfaces
+   10% Accent colors
+   ======================================== */
+
+/* Scrollbar Styling (Flat) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B3B3B3;
+}
+
+/* Focus Styles (AAA Contrast) */
+*:focus-visible {
+  outline: 2px solid #002f6b;
+  outline-offset: 2px;
+}
+
+/* Selection Colors */
+::selection {
+  background-color: #002f6b;
+  color: #FFFFFF;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Text Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Truncate */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Focus States */
+.focus-ring {
+  @apply focus-visible:outline-2 focus-visible:outline-[#002f6b] focus-visible:outline-offset-2;
+}
+
+/* Disabled States */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Elevation (Shadows Only - Flat Design) */
+.elevation-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.elevation-2 {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.elevation-3 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/* ========================================
+   COMPONENT PATTERNS
+   ======================================== */
+
+/* Card Base */
+.card {
+  @apply bg-white rounded-lg p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)];
+}
+
+/* Button Base */
+.btn {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply px-6 py-2 rounded-full font-medium text-base transition-all duration-[250ms];
+  @apply focus-ring disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer;
+}
+
+.btn-primary {
+  @apply btn bg-accent text-white;
+  @apply hover:bg-accent/90 active:scale-95 transition-all duration-[250ms];
+}
+
+.btn-secondary {
+  @apply btn bg-neutral-95 text-neutral-10;
+  @apply hover:bg-neutral-90 active:scale-95;
+}
+
+.btn-tertiary {
+  @apply btn bg-transparent text-accent shadow-[0_0_0_2px_#002f6b_inset];
+  @apply hover:bg-accent hover:text-white active:scale-95;
+}
+
+/* Input Base */
+.input {
+  @apply w-full px-4 py-2 rounded-xl;
+  @apply bg-neutral-95 text-base text-neutral-10;
+  @apply border-0 outline-none;
+  @apply shadow-[0_1px_3px_rgba(0,0,0,0.08)];
+  @apply hover:shadow-[0_2px_6px_rgba(0,0,0,0.12)];
+  @apply focus:shadow-[0_2px_8px_rgba(0,47,107,0.15)] focus:outline-none focus:border-0;
+  @apply transition-all duration-[250ms];
+  @apply placeholder:text-neutral-60;
+}
+
+.input:disabled {
+  @apply bg-neutral-95 cursor-not-allowed opacity-40;
+}
+
+.input-error {
+  @apply shadow-[0_2px_8px_rgba(239,68,68,0.15)] focus:shadow-[0_2px_8px_rgba(239,68,68,0.15)];
+}
+
+/* Select avec dropdown icon */
+select.input,
+select {
+  @apply pr-8 relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Options du select */
+select option {
+  @apply bg-white text-neutral-10 py-2 px-4;
+}
+
+/* Badge Base */
+.badge {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply badge bg-success/10 text-success;
+}
+
+.badge-warning {
+  @apply badge bg-warning/10 text-warning;
+}
+
+.badge-error {
+  @apply badge bg-error/10 text-error;
+}
+
+.badge-neutral {
+  @apply badge bg-neutral-95 text-neutral-40;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 250ms ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 250ms ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 250ms ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 300ms ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE HELPERS
+   ======================================== */
+
+/* Mobile First Approach */
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 1024px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Scale In Animation for Modals */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out forwards;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
